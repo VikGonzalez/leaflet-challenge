@@ -1,0 +1,92 @@
+html,
+body,
+#mapid { 
+    height: 95%; 
+    width: 100%;
+    justify-self: center;
+    background-color: black;
+}
+
+.legend {
+    line-height: 30px; /* height of legend */
+    color: black; 
+    width: auto;
+}
+.legend i {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 5px;
+    opacity: 1.0;
+    
+}
+.info {
+    font-weight: bolder;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+body {
+    margin:0;
+}
+
+/* Set Body Family Font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Set Headers as Bold */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+/* Set Height */
+.height-top-down {
+    padding: 100px 0;
+}
+
+/* Set Scrollbar when appear above*/
+.sps--abv {
+    background-color: rgb(3, 65, 3);
+    color:whitesmoke;
+}
+/* Set Scrollbar when appear below*/
+.sps--blw {
+    background-color:red;
+    color: greenyellow
+}
+
+nav.sps--abv .logo {
+    width: 100px;
+}
+
+/* Set logo */
+.logo {
+    width: 80px;
+    padding: 5px 0;
+}
+/* Set Icon Social Media size */
+.iconsSM {
+    width: 20px;
+    margin: 10px 5;
+}
+
+/* Set Footer    */
+footer {
+    background-color:rgb(27, 27, 31);
+    padding: 0px 20;
+    text-align: center;
+}
+
+footer.logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+footer p {
+    color: whitesmoke;
+    font-size: 14px;
+}
