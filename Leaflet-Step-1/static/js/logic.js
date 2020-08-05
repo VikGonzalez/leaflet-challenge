@@ -1,10 +1,8 @@
-// Create a map 
 let mymap = L.map('mapid', {
   center: [5.8,-4.1],
   zoom: 2}
 );
 
-// link to data API
 let usgs_link = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -16,8 +14,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: API_KEY
 }).addTo(mymap);
 
-// Set function for color map labels
-
 function getColor(d) {
   return d > 5.0 ? '#BF0000' :
          d > 4.0  ? '#FF0000' :
@@ -27,17 +23,14 @@ function getColor(d) {
                      '#2C0C0C0';
 }
 
-// Read in data
 d3.json(usgs_link).then(data=>{
   data.features.forEach(element => {
       let lat = element.geometry.coordinates[1]
       let long = element.geometry.coordinates[0]
       let timetag = new Date(element.properties.time).toGMTString()
 
-      // Magnitude Color Selector
       let color = getColor(parseFloat(element.properties.mag));
 
-      // Create Circle Layer
       L.circle(
           [lat,long],
           {
@@ -60,7 +53,6 @@ legend.onAdd = function (map) {
       grades = [0, 1, 2, 3, 4, 5],
       labels = [];
 
-  // loop through our density intervals and generate a label with a colored square for each interval
   for (var i = 0; i < grades.length; i++) {
       div.innerHTML +=
           '<i style="background:' + getColor(grades[i] + 1) + '"></i> '+
